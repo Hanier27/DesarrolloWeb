@@ -1,0 +1,108 @@
+#barraPrincipal{
+	background-color: white;
+    border-bottom: yellow solid;
+}
+
+.bg-light {
+    background-color: #003399!important;
+}
+
+.navbar{
+
+    border-bottom: yellow solid;
+}
+
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    
+    color: #e4ed43;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #f8f9fa;
+}
+
+#Barra{
+    padding: 20px;
+}
+
+#Barra img{
+    height: 150px;
+}
+
+#SupportedContent h1{
+	color:  white;
+	padding: 20px;
+    font-family: 'Marcellus SC', serif;
+}
+
+#avisos-main{
+    margin-top:  40px;
+}
+
+#avisos{
+    padding-top: 20px;
+}
+
+#avisos-main h1{
+    font-family: 'Marcellus SC', serif;
+}
+
+#avisos figure{
+    text-align: center;
+}
+
+#avisos figure figcaption{
+    text-align: left;
+}
+
+#avisos figure img{
+    width: 300px;
+    height: 250px;
+}
+
+.footer{
+	background-color: #003399;
+    border-top: yellow solid;
+}
+
+#piePagina{
+    padding: 20px;
+    color: white
+}
+
+#piePagina #title{
+    color: yellow;
+}
+
+#piePagina #contacts img{
+    height: 50px;
+    width: 50px;
+}
+
+.login{
+    border:1px solid #dae0e5;
+    padding: 30px;
+    margin:40px;
+}
+
+#btn-login:hover {
+    color: black;
+    background-color: yellow;
+    border-color: yellow;
+}
+
+#MenuPrincipal{
+    padding: 60px 0px;
+    border:2px solid #dae0e5;
+    margin:40px 0px;
+}
+
+#MenuPrincipal img{
+    width: 80px;
+    height: 80px;
+}
+
+#MenuPrincipal div{
+    margin :10px;
+}
+
