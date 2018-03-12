@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Inicio sesión</title>
+	<title>Registrar Aula</title>
 	<meta charset="utf-8">
 	<link rel="icon" href="img/favicon.jpg" type="image/jpg">
 	<link rel="stylesheet"  href="css/bootstrap.min.css">
@@ -30,8 +30,7 @@
 		</div>
 	</div>
 
-	
-		<nav class="navbar navbar-expand-md navbar-light bg-light">
+	<nav class="navbar navbar-expand-md navbar-light bg-light">
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		  </button>
@@ -41,7 +40,7 @@
 		      <li class="nav-item">
 		        <a class="nav-link" href="index.html">Inicio</a>
 		      </li>
-		      <li class="nav-item active">
+		      <li class="nav-item">
 		        <a class="nav-link" href="inicioSeccion.html">Iniciar sesion</a>
 		      </li>
 		      <li class="nav-item dropdown">
@@ -84,44 +83,44 @@
 	<nav aria-label="breadcrumb">
 	  <ol class="breadcrumb">
 	    <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
-	    <li class="breadcrumb-item active" aria-current="page">Inicio de Seccion</li>
+	    <li class="breadcrumb-item active" aria-current="page">Aula</li>
 	  </ol>
 	</nav>
 
-	<div class="container">
+	<div class="container-fluid">
 		<div class="col-md-12">
-			<div class="row justify-content-center">
-				<div class="login col-md-6">
+		  	  <h1 class="display-6 text-center"><b>Registrar Aula</b></h1>
+		  	  <hr style="border:1px solid #dae0e5;">
+			<div class="row justify-content-md-center main_regEmpleado">
+				<div id="reg_Estudiante" class="col-md-6 ">
 					<form>
-						<div class="form-group row">
-						    <label for="inputEmail3" class="col-sm-3 col-form-label">Cuenta</label>
-						    <div class="col-sm-9">
-						      <input type="email" class="form-control" id="inputEmail3" placeholder="Numero de Cuenta">
-						    </div>
-						  </div>
-						  <div class="form-group row">
-						    <label for="inputPassword3" class="col-sm-3 col-form-label">Contraseña</label>
-						    <div class="col-sm-9">
-						      <input type="password" class="form-control" id="inputPassword3" placeholder="Contraseña">
-						    </div>
-						  </div>
-						  <div class="form-group row text-center">
-						    <div class="col-sm-12">
-						      <a id="btn-login" type="button" href="matricula.html" class="btn btn-primary">Iniciar sesión</a>
-						    </div>
-						  </div>
+						  	<div class="form-group">
+								<label for="txt-numeroAula">Numero de la aula</label>
+								<input type="text" class="form-control" id="txt-numeroAula" placeholder="Escriba el numero">
+							</div>
+							<div class="form-group">
+								<label for="txt-tipoAula">Tipo de Aula</label>
+								<select id="txt-tipoAula" class="custom-select" >
+									<option selected>Seleccione el tipo de aula</option>
+									<option value="1">Laboratorio</option>
+									<option value="2">AudioVisual</option>
+									<option value="3">Normal</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label for="txt-edificio">Edificio</label>
+								<select id="txt-edificio" class="custom-select" >
+									<option selected>Seleccione el Edificio</option>
+									<option value="1">B2</option>
+									<option value="2">F1</option>
+									<option value="3">D1</option>
+								</select>
+							</div>
+							
+								<button type="button" class="btn btn-primary">Registrar </button>
+						 
+						<!--<button type="submit" class="btn btn-primary">Submit</button>-->
 					</form>
-				</div>
-			</div>
-			<div class="row justify-content-center">
-				<div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
-				  <h4 class="alert-heading ">Importante!</h4>
-  					<p>Si tiene problemas para ingresar al sistema, favor comunicarse al Tel: 2232-6862.</p>
- 					<hr>
- 					<p>Para una mejor experiencia de navegación utilice los navegadores Internet Explorer o Google-Chrome</p>
-				  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				    <span aria-hidden="true">&times;</span>
-				  </button>
 				</div>
 			</div>
 		</div>
@@ -164,6 +163,7 @@
 				</div>
 			</div>
 		</div>
-	</div>	
+	</div>
+
 </body>
 </html>

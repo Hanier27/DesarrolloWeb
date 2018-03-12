@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Inicio sesión</title>
+	<title>Administracion</title>
 	<meta charset="utf-8">
 	<link rel="icon" href="img/favicon.jpg" type="image/jpg">
 	<link rel="stylesheet"  href="css/bootstrap.min.css">
@@ -30,8 +30,7 @@
 		</div>
 	</div>
 
-	
-		<nav class="navbar navbar-expand-md navbar-light bg-light">
+	<nav class="navbar navbar-expand-md navbar-light bg-light">
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		  </button>
@@ -41,7 +40,7 @@
 		      <li class="nav-item">
 		        <a class="nav-link" href="index.html">Inicio</a>
 		      </li>
-		      <li class="nav-item active">
+		      <li class="nav-item">
 		        <a class="nav-link" href="inicioSeccion.html">Iniciar sesion</a>
 		      </li>
 		      <li class="nav-item dropdown">
@@ -84,46 +83,24 @@
 	<nav aria-label="breadcrumb">
 	  <ol class="breadcrumb">
 	    <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
-	    <li class="breadcrumb-item active" aria-current="page">Inicio de Seccion</li>
+	    <li class="breadcrumb-item active" aria-current="page">Administracion</li>
 	  </ol>
 	</nav>
 
 	<div class="container">
 		<div class="col-md-12">
-			<div class="row justify-content-center">
-				<div class="login col-md-6">
-					<form>
-						<div class="form-group row">
-						    <label for="inputEmail3" class="col-sm-3 col-form-label">Cuenta</label>
-						    <div class="col-sm-9">
-						      <input type="email" class="form-control" id="inputEmail3" placeholder="Numero de Cuenta">
-						    </div>
-						  </div>
-						  <div class="form-group row">
-						    <label for="inputPassword3" class="col-sm-3 col-form-label">Contraseña</label>
-						    <div class="col-sm-9">
-						      <input type="password" class="form-control" id="inputPassword3" placeholder="Contraseña">
-						    </div>
-						  </div>
-						  <div class="form-group row text-center">
-						    <div class="col-sm-12">
-						      <a id="btn-login" type="button" href="matricula.html" class="btn btn-primary">Iniciar sesión</a>
-						    </div>
-						  </div>
-					</form>
+		  	  <h1 class="display-6 text-center"><b>DIIP</b></h1>
+		  	  <hr style="border:1px solid #dae0e5;">
+			<div id="MenuPrincipal" class="row justify-content-center">
+					<div class="col-lg-4">
+						<img src="img/estudiante.png" class="img-rounded">
+						<a href="registrarEstudiante.html">Registro de Estudiante</a>
+					</div>
+					<div class="col-lg-4">
+						<img src="img/empleado.png" class="img-rounded">
+						<a href="registrarEmpleado.html">Registro de Empleado</a> 
+					</div>
 				</div>
-			</div>
-			<div class="row justify-content-center">
-				<div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
-				  <h4 class="alert-heading ">Importante!</h4>
-  					<p>Si tiene problemas para ingresar al sistema, favor comunicarse al Tel: 2232-6862.</p>
- 					<hr>
- 					<p>Para una mejor experiencia de navegación utilice los navegadores Internet Explorer o Google-Chrome</p>
-				  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				    <span aria-hidden="true">&times;</span>
-				  </button>
-				</div>
-			</div>
 		</div>
 	</div>
 
@@ -164,6 +141,6 @@
 				</div>
 			</div>
 		</div>
-	</div>	
+	</div>
 </body>
 </html>
