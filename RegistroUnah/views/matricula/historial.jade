@@ -1,0 +1,60 @@
+.row(style='padding-top: 40px; margin-right: 20px;margin-left: 20px; background-color: white; margin-top: 20px; padding-bottom: 70px;')
+	.col-md-12
+		.col-md-12
+			h1.display-6.text-center(style='color: black;')
+				b Historiales
+			hr(style='border:1px solid #dae0e5;')
+		.col-md-12
+			.row
+				#v-pills-tab.nav.flex-column.nav-pills.col-md-2(role='tablist', aria-orientation='vertical')
+					a#v-pills-Iniciohistorial-tab.nav-link.active(data-toggle='pill', href='#v-pills-Iniciohistorial', role='tab', aria-controls='v-pills-Iniciohistorial', aria-selected='true') Inicio
+					a#v-pills-historialacademico-tab.nav-link(data-toggle='pill', href='#v-pills-historialacademico', role='tab', aria-controls='v-pills-historialacademico', aria-selected='true') Historial Academico
+					a#v-pills-equivalencias-tab.nav-link(data-toggle='pill', href='#v-pills-equivalencias', role='tab', aria-controls='v-pills-equivalencias', aria-selected='false') Equivalencias
+				#v-pills-tabContent.tab-content.col-md-10(style='padding-top: 20px;')
+					#v-pills-Iniciohistorial.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='v-pills-Iniciohistorial-tab')
+						.row
+							.col-4
+								img(src='https://civuunah.files.wordpress.com/2015/11/puma.png?w=640', width='200px', style='transform: scaleX(-1);')
+							.col-8.d-flex.justify-content-center(style='padding: 100px 20px;')
+								h1(style="color:black; font-family: 'Amatic SC', cursive; font-size: 50px;") UNAH es tu Casa
+					#v-pills-historialacademico.tab-pane.fade(role='tabpanel', aria-labelledby='v-pills-historialacademico-tab')
+						.row.d-flex.justify-content-center
+							#profile-user.col-md-12(style='padding-bottom: 30px;')
+								.row
+									.col-4.col-md-4.col-lg-2
+										img.rounded-cicle(src='img/user.png', width='140px', alt='Responsive-img')
+									.col-8.col-md-8.col-lg-10
+										.row
+											.col-md-12.col-lg-6
+												h5 Cuenta: 20131004389
+												h5 Nombre: Hanier Isaias Rodas
+												h5 Carrera: Ingenieria en Sistemas
+											.col-md-12.col-lg-6
+												h5 Centro: Cuidad Universitaria
+												h5 Indice Global: 90
+												h5 Indice Periodo: 99
+							.col-md-12
+								.table-responsive
+									table#example.table.table-striped.table-bordered(style='width:100%')
+										thead
+											tr
+												th Codigo
+												th Asignatura
+												th UV
+												th Seccion
+												th Año
+												th Periodo
+												th Calificacion
+												th Observacion
+										tbody
+											tr
+												td EG011
+												td ESPANOL GENERAL
+												td 4
+												td 1400
+												td 2013
+												td 1
+												td 89
+												td APR
+					#v-pills-equivalencias.tab-pane.fade(role='tabpanel', aria-labelledby='v-pills-equivalencias-tab')
+						.row.d-flex.justify-content-center

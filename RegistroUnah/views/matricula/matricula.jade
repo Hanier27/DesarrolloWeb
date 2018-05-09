@@ -1,0 +1,201 @@
+.row(style='padding-top: 40px; margin-right: 20px;margin-left: 20px; background-color: white; margin-top: 20px; padding-bottom: 70px;')
+	.col-md-12
+		.col-md-12
+			.col-md-12
+				h1.display-6.text-center(style='color: black;')
+					b Matricula
+				hr(style='border:1px solid #dae0e5;')
+			.col-md-12
+				.row
+					#v-pills-tab.nav.flex-column.nav-pills.col-md-2(role='tablist', aria-orientation='vertical')
+						a#v-pills-matricula-tab.nav-link.active(data-toggle='pill', href='#v-pills-matricula', role='tab', aria-controls='v-pills-matricula', aria-selected='true') Inicio
+						a#v-pills-addAsignatura-tab.nav-link(data-toggle='pill', href='#v-pills-addAsignatura', role='tab', aria-controls='v-pills-addAsignatura', aria-selected='true') Adicionar Asignatura
+						a#v-pills-forma003-tab.nav-link(data-toggle='pill', href='#v-pills-forma003', role='tab', aria-controls='v-pills-forma003', aria-selected='false') Forma 003
+						a#v-pills-listaEspera-tab.nav-link(data-toggle='pill', href='#v-pills-listaEspera', role='tab', aria-controls='v-pills-listaEspera', aria-selected='false') Lista de Espera
+						a#v-pills-Cuenta-tab.nav-link(data-toggle='pill', href='#v-pills-Cuenta', role='tab', aria-controls='v-pills-Cuenta', aria-selected='false') Estado de cuenta
+					#v-pills-tabContent.tab-content.col-md-10(style='padding-top: 30px;')
+						#v-pills-matricula.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='v-pills-matricula-tab')
+							.row
+								.col-4
+									img(src='https://civuunah.files.wordpress.com/2015/11/puma.png?w=640', width='200px', style='transform: scaleX(-1);')
+								.col-8.d-flex.justify-content-center(style='padding: 100px 20px;')
+									h1(style="color:black; font-family: 'Amatic SC', cursive; font-size: 50px;") UNAH es tu Casa
+						#v-pills-addAsignatura.tab-pane.fade(role='tabpanel', aria-labelledby='v-pills-addAsignatura-tab')
+							.row.d-flex.justify-content-center
+								.col-12.d-flex.justify-content-center
+									button.btn.btn-success(data-toggle='modal', onclick="reiniciar()",data-target='#matricular') Agregar Asignatura
+								.col-12(style='padding-top: 30px;')
+									.table-responsive
+										table#tbl-AsignaturasMatriculadas.table.table-striped.table-bordered(style='width:100%') 
+											thead(style='color: white;')
+												tr.bg-primary(align='center')
+													th(colspan='11') Asignaturas Matriculadas
+												tr.bg-primary(align='center')
+													th Codigo
+													th Asignatura
+													th Seccion
+													th HI
+													th HF
+													th Dias
+													th Edificio
+													th Aula
+													th UV
+													th Periodo
+													th Cancelar
+											tbody(align='center')
+												
+									.table-responsive
+										table#tbl-AsignaturasEspera.table.table-striped.table-bordered(style='width:100%')
+											thead(style='color: white;')
+												tr.bg-primary(align='center')
+													th(colspan='11') Asignaturas en Espera
+												tr.bg-primary(align='center')
+													th Codigo
+													th Asignatura
+													th Dias
+													th UV
+													th Periodo
+													th Cancelar
+											tbody(align='center')
+						#v-pills-forma003.tab-pane.fade(role='tabpanel', aria-labelledby='v-pills-forma003-tab')
+							#profile-user(style='padding-bottom: 30px;')
+								.row.d-flex.justify-content-center
+									.col-4.col-md-4.col-lg-2
+										img.rounded-cicle(src='img/user.png', width='140px')
+									.col-8.col-md-8.col-lg-10
+										.row
+											.col-md-12.col-lg-6
+												h5 Cuenta: 20131004389
+												h5 Nombre: Hanier Isaias Rodas
+												h5 Carrera: Ingenieria en Sistemas
+											.col-md-12.col-lg-6
+												h5 Centro: Cuidad Universitaria
+												h5 Año: 2018
+							.table-responsive
+								table#example.table.table-striped.table-bordered(style='width:100%')
+									thead(style='color: white;')
+										tr.bg-primary(align='center')
+											th(colspan='11') Asignaturas Matriculadas
+										tr.bg-primary(align='center')
+											th Codigo
+											th Asignatura
+											th Seccion
+											th HI
+											th HF
+											th Dias
+											th Edificio
+											th Aula
+											th UV
+											th Periodo
+											th OBS
+									tbody(align='center')
+										tr
+											td EG011
+											td ESPANOL GENERAL
+											td 1400
+											td 1400
+											td 1500
+											td LuMaMiJu
+											td D1
+											td 101
+											td 4
+											td 1
+											td
+							.table-responsive
+								table#example.table.table-striped.table-bordered(style='width:100%')
+									thead(style='color: white;')
+										tr.bg-primary(align='center')
+											th(colspan='11') Laboratorios Matriculados
+										tr.bg-primary(align='center')
+											th Codigo
+											th Laboratorio
+											th Seccion
+											th HI
+											th HF
+											th Dias
+											th Edificio
+											th Aula
+											th Periodo
+											th OBS
+									tbody(align='center')
+										tr
+											td EG011
+											td ESPANOL GENERAL
+											td 1400
+											td 1400
+											td 1500
+											td LuMaMiJu
+											td D1
+											td 101
+											td 1
+											td
+						#v-pills-listaEspera.tab-pane.fade(role='tabpanel', aria-labelledby='v-pills-listaEspera-tab')
+							.table-responsive
+								table#example.table.table-striped.table-bordered(style='width:100%')
+									thead(style='color: white;')
+										tr.bg-primary(align='center')
+											th(colspan='11') Asignaturas en Espera
+										tr.bg-primary(align='center')
+											th Codigo
+											th Asignatura
+											th Dias
+											th UV
+											th Periodo
+											th Cancelar
+									tbody(align='center')
+										tr
+											td EG011
+											td ESPANOL GENERAL
+											td LuMaMiJu
+											td 4
+											td 1
+											td
+												button.btn.btn-danger Eliminar
+						#v-pills-Cuenta.tab-pane.fade(role='tabpanel', aria-labelledby='v-pills-Cuenta-tab')
+							.d-flex.justify-content-center
+								.table-responsive.col-md-6
+									table#example.table.table-striped.table-bordered(style='width:100%')
+										thead(style='color: white;')
+											tr.bg-warning(align='center')
+												th(colspan='11') Cargos Pendientes
+											tr.bg-warning(align='center')
+												th Cargo
+												th Monto
+										tbody(align='center')
+											tr
+												td Matricula
+												td L.270
+						#matricular.modal.fade
+							.modal-dialog
+								.modal-content
+									// Modal Header
+									.modal-header
+										h4.modal-title Matricula
+										button.close(type='button', data-dismiss='modal') ×
+									// Modal body
+									.modal-body
+										.d-flex.justify-content-center
+											.table-responsive.col-md-12
+												table#example.table.table-striped.table-bordered(style='width:100%')
+													thead
+														tr(align='center')
+															th Departamento
+															th Asignaturas
+															th Secciones
+													tbody(align='center')
+														tr
+															td(style="width:30%") 
+																.form-group
+																	select#select-departamento.custom-select(size='12')
+															td(style="width:30%") 
+																.form-group
+																	select#select-asignaturas.custom-select(size='12')
+															td(style="width:30%") 
+																.form-group
+																	select#select-secciones.custom-select(size='12' )					
+									// Modal footer
+									.modal-footer
+										div(style='text-align: center;')
+										button#btn_registrarSeccion.btn.btn-primary(onclick='Matricular()', type='button') Matricular
+
+	

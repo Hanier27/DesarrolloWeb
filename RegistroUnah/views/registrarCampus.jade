@@ -1,0 +1,77 @@
+doctype html
+html
+  head
+    title Registro de Campus
+    meta(charset='utf-8')
+    link(rel='icon', href='./img/favicon.jpg', type='image/jpg')
+    link(rel='stylesheet', href='./css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='./css/misestilos.css')
+    link(href='https://fonts.googleapis.com/css?family=Marcellus+SC', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Chicle', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Amatic+SC', rel='stylesheet')
+  body
+
+    include ./Components/navbar.jade
+
+    nav(aria-label='breadcrumb')
+        ol.breadcrumb
+            li.breadcrumb-item
+                a(href='/') Inicio
+            li.breadcrumb-item
+                a(href='seapi') SEAPI
+            li.breadcrumb-item.active(aria-current='page') Campus
+    .container-fluid
+        .col-md-12
+            h1.display-6.text-center
+                b Campus
+            hr(style='border:1px solid #dae0e5;')
+            .row.justify-content-md-center.main_regEmpleado
+                .col-md-12(style=' padding: 20px;')
+                    .form-group.row.text-center
+                        .col-sm-12
+                            button.btn.btn-success.btn-lg(type='button', onclick='removerValidacionesCampus()', data-toggle='modal', data-target='#registrarCampus')
+                                i.fa.fa-user-plus
+                                |  Registrar
+                #reg_Estudiante.col-md-12
+                    .row.justify-content-md-center
+                        .col-md-8
+                            table#table-campus.table.table-striped.table-bordered
+                                thead
+                                    tr
+                                        th #
+                                        th Campus
+                                        th Cantidad Edificios
+                                tbody
+    #registrarCampus.modal.fade
+        .modal-dialog
+            .modal-content
+                // Modal Header
+                .modal-header
+                    h4.modal-title Agregar Campus
+                    button.close(type='button', data-dismiss='modal') ×
+                // Modal body
+                .modal-body
+                    form
+                        .form-group
+                            label(for='txt-campus') Nombre del Campus
+                            input#txt-campus.form-control(type='text', placeholder='Escriba el nombre del Campus')
+                            .valid-feedback Correcto
+                            .invalid-feedback Escriba el nombre del Campus
+                        .form-group
+                            label(for='txt-cantEdificios') Cantidad de Edificios
+                            input#txt-cantEdificios.form-control(type='number', placeholder='Escriba la Cantidad de Edificios')
+                            .valid-feedback Correcto
+                            .invalid-feedback Escriba la cantidad de Edificios
+                // Modal footer
+                .modal-footer
+                    div(style='text-align: center;')
+                    button.btn.btn-danger(type='button', data-dismiss='modal') Close
+                    button#btn_registrarCampus.btn.btn-primary(onclick='guardarCampus()', type='button') Registrar Campus
+
+    include ./Components/footer.jade
+
+    script(src='./js/jquery-3.3.1.min.js')
+    script(src='./js/popper.min.js')
+    script(src='./js/bootstrap.min.js')
+    script(src='./js/ControladorSeapi.js') 

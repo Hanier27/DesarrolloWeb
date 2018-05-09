@@ -1,0 +1,56 @@
+#barraPrincipal.d-none.d-md-block(style='margin-top: 80px; background-color: yellow;')
+      div(style='background-color: rgba(0,0,0,0.9);')
+        #Barra
+          .col-12
+            .row
+              .col-md-3.col-lg-3.col-xl-3.d-none.d-md-block
+                a.navbar-brand(href='index.html')
+                  img.rounded-circle(src='img/logoDIIP_1.jpg', alt='Responsive image')
+              #SupportedContent.col-12.col-sm-12.col-md-9.col-lg-9.col-xl-9
+                hr(style='border: 1px solid white;')
+                h1#Seccion.text-center(style='color: white; padding-top:20px;')
+                  b Direccion de Ingreso Permanencia y Promocion
+                hr(style='border: 1px solid white;')
+    div(style='background-color: rgba(0,0,0,0.9);')
+
+nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top#NavbarPrincipal
+    button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+    a.navbar-brand.d-block.d-md-none(href='/') DIIP
+        #navbarSupportedContent.collapse.navbar-collapse
+            ul.navbar-nav.mr-auto
+                li.nav-item.active
+                    a.nav-link(href='/') Pagina Principal
+                li.nav-item
+                    a.nav-link(href='login_estudiantes') Primer Ingreso
+                li.nav-item.dropdown
+                    a#navbarDropdown.nav-link.dropdown-toggle( role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                        | Sistema de Pregrado
+                        .dropdown-menu(aria-labelledby='navbarDropdown')
+                            a.dropdown-item(href='login_estudiantes') Estudiantes
+                            a.dropdown-item(href='login_empleados') Profesores
+                            a.dropdown-item(href='jefeDepartamento') Jefe de Departamento
+                li.nav-item.dropdown
+                    a#navbarDropdown.nav-link.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                        | Administracion
+                        .dropdown-menu(aria-labelledby='navbarDropdown')
+                            a.dropdown-item(href='direccionAcademica') Direccion Academica
+                            a.dropdown-item(href='administracion') DIIP
+                            a.dropdown-item(href='seapi') SEAPI
+          ul#MenuBar.nav.mt-2.mt-md-0.d-none.session
+            li.nav-item
+                .dropdown.show
+                    a#dropdownMenuButton.nav-link.dropdown-toggle(title='Perfil', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                        img.rounded-circle(src='img/user.png', width='50px')
+                    .dropdown-menu(aria-labelledby='dropdownMenuButton')
+                        a.dropdown-item(href='#')
+                            i.fa.fa-user(style='color: red')
+                                |  Perfil
+                        a.dropdown-item(href='#')
+                            i.fa.fa-cogs(style='color: red')
+                                |  Configuracion
+                        a.dropdown-item(href='destruir')
+                            i.fa.fa-close(style='color: red')
+                                |  Salir
+          #logo.col-12.col-sm-3.col-md-1.col-lg-1.col-xl-1.d-none.d-lg-block.mt-2.mt-md-0
+            img.img-fluid.float-right(src='img/logo-unah-blanco.png', alt='Responsive image', width='90px')

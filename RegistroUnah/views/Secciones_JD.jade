@@ -1,0 +1,132 @@
+doctype html
+html
+  head
+    title Jefe Departamento
+    meta(charset='utf-8')
+    link(rel='icon', href='./img/favicon.jpg', type='image/jpg')
+    link(rel='stylesheet', href='./css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='./css/misestilos.css')
+    link(href='https://fonts.googleapis.com/css?family=Marcellus+SC', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Chicle', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Amatic+SC', rel='stylesheet')
+  body
+
+    include ./Components/navbar.jade
+
+    nav(aria-label='breadcrumb')
+        ol.breadcrumb
+            li.breadcrumb-item
+                a(href='/') Inicio
+            li.breadcrumb-item
+                a(href='jefeDepartamento') jefe Departamento
+            li.breadcrumb-item.active(aria-current='page') Secciones
+
+    .container-fluid
+        .col-md-12
+            h1.display-6.text-center
+                b Secciones
+            hr(style='border:1px solid #dae0e5;')
+            .row.justify-content-md-center.main_regEmpleado
+                .col-md-12(style=' padding: 20px;')
+                    .form-group.row.text-center
+                        .col-sm-12
+                            button.btn.btn-success.btn-lg(type='button', onclick='removerValidacionesSecciones()', data-toggle='modal', data-target='#registrarSeccion')
+                                i.fa.fa-user-plus
+                                |  Registrar
+                #reg_Estudiante.col-md-12
+                    table#tbl-secciones.table.table-striped.table-bordered(style='width:100%')
+                        thead
+                            tr
+                            th #
+                            th Codigo Alterno
+                            th HI
+                            th HF
+                            th Asignatura
+                            th Docente
+                            th Aula
+                            th Dias
+                            th Periodo
+                            th Cupos
+                        tbody
+
+    #registrarSeccion.modal.fade
+        .modal-dialog
+            .modal-content
+                // Modal Header
+                .modal-header
+                    h4.modal-title Agregar Seccion
+                    button.close(type='button', data-dismiss='modal') ×
+                // Modal body
+                .modal-body
+                    form
+                        .form-group
+                            label(for='txt-codigoSeccion') Codigo Alterno
+                            input#txt-codigoSeccion.form-control(type='text', placeholder='Escriba el codigo de la Seccion')
+                            .valid-feedback Correcto
+                            .invalid-feedback Escriba el Codigo de la Seccion
+                        .form-group
+                            label(for='txt-horaInicialSeccion') Hora inicial
+                            input#txt-horaInicialSeccion.form-control(type='time', placeholder='Escriba el nombre de la asignatura')
+                            .valid-feedback Correcto
+                            .invalid-feedback Seleccione la Hora inicial
+                        .form-group
+                            label(for='txt-horaFinalSeccion') Hora Final
+                            input#txt-horaFinalSeccion.form-control(type='time')
+                            .valid-feedback Correcto
+                            .invalid-feedback Seleccione la Hora Final
+                        .form-group
+                            label(for='txt-cuposSeccion') Cantidad de Cupos
+                            input#txt-cuposSeccion.form-control(type='number')
+                            .valid-feedback Correcto
+                            .invalid-feedback Escriba la Cantidad de Cupos
+                        .form-group
+                            label(for='select-aulaSeccion') Aula
+                            select#select-aulaSeccion.custom-select
+                                option(value='0', selected='') Seleccione una Aula
+                            .valid-feedback Correcto
+                            .invalid-feedback Seleccione la Aula para la Seccion
+                        .form-group
+                            label(for='select-diasSemanaSeccion') Dias
+                            select#select-diasSemanaSeccion.custom-select(multiple='')
+                                option(value='0', selected='') Seleccione los dias de la Seccion
+                                option(value='Lu') Lunes
+                                option(value='Ma') Martes
+                                option(value='Mi') Miercoles
+                                option(value='Ju') Jueves
+                                option(value='Vi') Viernes
+                                option(value='Sa') Sabados
+                                option(value='Do') Domingos
+                            .valid-feedback Correcto
+                            .invalid-feedback Seleccione los dias de la Seccion
+                        .form-group
+                            label(for='select-peridoSeccion') Periodo
+                            select#select-peridoSeccion.custom-select
+                                option(value='0', selected='') Seleccione el Periodo
+                            .valid-feedback Correcto
+                            .invalid-feedback Seleccione el Periodo
+                        .form-group
+                            label(for='select-asignaturaSeccion') Asignatura
+                            select#select-asignaturaSeccion.custom-select
+                                option(value='0', selected='') Seleccione las asignatura
+                            .valid-feedback Correcto
+                            .invalid-feedback Seleccione la Asignatura para la Seccion
+                        .form-group
+                            label(for='select-docenteSeccion') Docente
+                            select#select-docenteSeccion.custom-select
+                                option(value='0', selected='') Seleccione el Docente
+                            .valid-feedback Correcto
+                            .invalid-feedback Seleccione el Docente
+                // Modal footer
+                .modal-footer
+                    div(style='text-align: center;')
+                    button.btn.btn-danger(type='button', data-dismiss='modal') Close
+                    button#btn_registrarSeccion.btn.btn-primary(onclick='guardarSeccion()', type='button') Registrar Seccion
+
+
+    include ./Components/footer.jade
+
+script(src='./js/jquery-3.3.1.min.js')
+script(src='./js/popper.min.js')
+script(src='./js/bootstrap.min.js')
+script(src='./js/Controlador_jefeDepartamento.js')  

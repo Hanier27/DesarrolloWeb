@@ -1,0 +1,80 @@
+doctype html
+html
+  head
+    title Matricula
+    meta(charset='utf-8')
+    link(rel='icon', href='./img/favicon.jpg', type='image/jpg')
+    link(rel='stylesheet', href='./css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='./css/misestilos.css')
+    link(rel='stylesheet', href='./css/modalmatricula.css')
+    link(href='https://fonts.googleapis.com/css?family=Marcellus+SC', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Chicle', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Amatic+SC', rel='stylesheet')
+  body
+
+    include ./Components/navbar.jade
+
+    div(style='width: 100%;background-image: url(http://confidencialhn.com/wp-content/uploads/2017/06/UNAH.jpg); background-size: cover; background-position: center;')
+        div(style='background-color: rgba(0,0,0,0.8); width: 100%')
+            .container-fluid
+                .row
+                    .col-12.col-md-2.col-lg-2.d-flex.justify-content-start(style='margin-top: 20px;')
+                        ul#MenuBar.nav
+                            li.nav-item
+                                a#menu-bar.nav-link.d-flex(data-toggle='pill', href='#', title='Menu')
+                                    img.rounded-circle(src='img/menu.png', width='50px')
+                    // Nav pills
+                    .col-12.col-md-8.col-lg-8.d-flex.justify-content-center(style='margin-top: 20px; color: white; text-align: center;')
+                        ul#SubMenu.nav.nav-pills
+                            li.nav-item
+                                a.nav-link(data-toggle='pill', href='#historial', title='Historial Academico')
+                                    img#SubMenu-historial.rounded-circle(src='img/historial.png', width='50px')
+                            li.nav-item
+                                a.nav-link(data-toggle='pill', href='#solicitudes', title='Solicitudes')
+                                    img#SubMenu-solicitudes.rounded-circle(src='img/solicitudes.png', width='50px')
+                            li.nav-item
+                                a.nav-link(data-toggle='pill', href='#matricula', title='Matricula')
+                                    img#SubMenu-matricula.rounded-circle(src='img/matricula.jpg', width='50px')
+                            li.nav-item
+                                a.nav-link.active(data-toggle='pill', href='#menu', title='Inicio')
+                                    img.rounded-circle(src='img/home.ico', width='50px')
+                            li.nav-item
+                                a.nav-link(data-toggle='pill', href='#censo', title='Censo de Matricula')
+                                    img#SubMenu-censo.rounded-circle(src='img/censo.png', width='50px')
+                            li.nav-item
+                                a.nav-link(data-toggle='pill', href='#calificaciones', title='Calificaciones del Periodo')
+                                    img#SubMenu-calificaciones.rounded-circle(src='img/calificaciones.jpg', width='50px')
+                            li.nav-item
+                                a.nav-link(data-toggle='pill', href='#programacion', title='Programacion Academica')
+                                    img#SubMenu-programacion.rounded-circle(src='img/programacion.png', width='50px')
+                    
+            
+            // Tab panes
+            .tab-content(style='padding-bottom: 40px;')
+                #historial.tab-pane.fade
+                    include ./matricula/historial.jade
+                #solicitudes.tab-pane.fade
+                    include ./matricula/solicitudes.jade
+                #matricula.tab-pane.fade
+                    include ./matricula/matricula.jade
+                #menu.tab-pane.fade.show.active
+                    .col-md-12(style='padding-top: 40px;')
+                        .row
+                            .col-12.col-md-6.col-lg-4
+                                img(src='https://civuunah.files.wordpress.com/2015/11/puma.png?w=640', width='400px', style='transform: scaleX(-1);')
+                            .col-12.col-md-6.col-lg-8.d-flex.justify-content-center.text-center(style='padding: 70px 20px')
+                                h1(style='color: white;') Bienvenido Puma al Sistema de Matricula
+                #censo.tab-pane.fade
+                    include ./matricula/censoMatricula.jade
+                #calificaciones.tab-pane.fade
+                    include ./matricula/calificacionesPeriodo.jade
+                #programacion.tab-pane.fade
+                    include ./matricula/programacionPeriodo.jade
+
+    include ./Components/footer.jade
+
+script(src='./js/jquery-3.3.1.min.js')
+script(src='./js/popper.min.js')
+script(src='./js/bootstrap.min.js')
+script(src='./js/controlador_Matriculas.js') 

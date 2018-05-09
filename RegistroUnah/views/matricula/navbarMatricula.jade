@@ -1,0 +1,46 @@
+
+		.col-12.col-md-2.col-lg-2.d-flex.justify-content-start(style='margin-top: 20px;')
+			ul#MenuBar.nav
+				li.nav-item
+					a#menu-bar.nav-link.d-flex(data-toggle='pill', href='#', title='Menu')
+						img.rounded-circle(src='img/menu.png', width='50px')
+		// Nav pills
+		.col-12.col-md-8.col-lg-8.d-flex.justify-content-center(style='margin-top: 20px; color: white; text-align: center;')
+			ul#SubMenu.nav.nav-pills
+				li.nav-item
+					a.nav-link(data-toggle='pill', href='#historial', title='Historial Academico')
+						img#SubMenu-historial.rounded-circle(src='img/historial.png', width='50px')
+				li.nav-item
+					a.nav-link(data-toggle='pill', href='#solicitudes', title='Solicitudes')
+						img#SubMenu-solicitudes.rounded-circle(src='img/solicitudes.png', width='50px')
+				li.nav-item
+					a.nav-link(data-toggle='pill', href='#matricula', title='Matricula')
+						img#SubMenu-matricula.rounded-circle(src='img/matricula.jpg', width='50px')
+				li.nav-item
+					a.nav-link.active(data-toggle='pill', href='#menu', title='Inicio')
+						img.rounded-circle(src='img/home.ico', width='50px')
+				li.nav-item
+					a.nav-link(data-toggle='pill', href='#censo', title='Censo de Matricula')
+						img#SubMenu-censo.rounded-circle(src='img/censo.png', width='50px')
+				li.nav-item
+					a.nav-link(data-toggle='pill', href='#calificaciones', title='Calificaciones del Periodo')
+						img#SubMenu-calificaciones.rounded-circle(src='img/calificaciones.jpg', width='50px')
+				li.nav-item
+					a.nav-link(data-toggle='pill', href='#programacion', title='Programacion Academica')
+						img#SubMenu-programacion.rounded-circle(src='img/programacion.png', width='50px')
+		.col-12.col-md-2.col-lg-2.d-flex.justify-content-start(style='margin-top: 20px;')
+			ul#MenuBar.nav
+				li.nav-item
+					.dropdown.show
+						a#dropdownMenuButton.nav-link.dropdown-toggle(title='Perfil', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+							img.rounded-circle(src='img/user.png', width='50px')
+						.dropdown-menu(aria-labelledby='dropdownMenuButton')
+							a.dropdown-item(href='#')
+								i.fa.fa-user(style='color: red')
+								|  Perfil
+							a.dropdown-item(href='#')
+								i.fa.fa-cogs(style='color: red')
+								|  Configuracion
+							a.dropdown-item(href='inicio')
+								i.fa.fa-close(style='color: red')
+								|  Salir

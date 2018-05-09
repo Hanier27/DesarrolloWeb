@@ -1,0 +1,60 @@
+doctype html
+html
+  head
+    title Registro de Estudiantes
+    meta(charset='utf-8')
+    link(rel='icon', href='./img/favicon.jpg', type='image/jpg')
+    link(rel='stylesheet', href='./css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='./css/misestilos.css')
+    link(href='https://fonts.googleapis.com/css?family=Marcellus+SC', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Chicle', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Amatic+SC', rel='stylesheet')
+  body
+
+    include ./Components/navbar.jade
+
+    nav(aria-label='breadcrumb')
+        ol.breadcrumb
+            li.breadcrumb-item
+                a(href='/') Inicio
+            li.breadcrumb-item
+                a(href='administracion') DIPP
+            li.breadcrumb-item.active(aria-current='page') Estudiantes
+
+    .container-fluid
+        .col-md-12
+            h1.display-6.text-center
+                b Registro de Estudiantes
+            hr(style='border:1px solid #dae0e5;')
+            .row.justify-content-md-center.main_regEmpleado
+                .col-md-12(style=' padding: 20px;')
+                    .form-group.row.text-center
+                        .col-sm-12
+                            button.btn.btn-success.btn-lg(type='button', onclick='removerValidacionesEstudiantes()', data-toggle='modal', data-target='#registrarEstudiante')
+                                i.fa.fa-user-plus
+                                |  Registrar
+                #reg_Estudiante.col-md-12
+                    table#tbl-Estudiantes.display.table.table-striped.table-bordered(style='width:100%', align='center')
+                        thead(align='center')
+                            tr
+                                th #
+                                th Cuenta
+                                th Nombre Completo
+                                th Identidad
+                                th Direccion
+                                th Telefono
+                                th Correo
+                                th Campus
+                                th Carreras
+                                th Promedio
+                        tbody(align='center')
+
+    include ./Components/modalEstudiante.jade
+    
+    include ./Components/footer.jade
+
+    script(src='./js/jquery-3.3.1.min.js')
+    script(src='./js/popper.min.js')
+    script(src='./js/bootstrap.min.js')
+    script(src='./js/ControladorDIIP.js') 

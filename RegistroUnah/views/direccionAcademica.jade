@@ -1,0 +1,44 @@
+doctype html
+html
+  head
+    title Direccion Academica
+    meta(charset='utf-8')
+    link(rel='icon', href='img/favicon.jpg', type='image/jpg')
+    link(rel='stylesheet', href='./css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='./css/misestilos.css')
+    link(href='https://fonts.googleapis.com/css?family=Marcellus+SC', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Chicle', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Amatic+SC', rel='stylesheet')
+  body
+
+    include ./Components/navbar.jade
+    
+    nav(aria-label='breadcrumb')
+      ol.breadcrumb
+        li.breadcrumb-item
+          a(href='/') Inicio
+        li.breadcrumb-item.active(aria-current='page') Direccion Academica
+
+    .container
+      .col-md-12
+        #MenuPrincipal.row.justify-content-center
+          .col-lg-4
+            img.img-rounded(src='img/favu.png')
+            a(href='crearFacultad')  Facultades
+          .col-lg-4
+            img.img-rounded(src='img/carreras.png')
+            a(href='crearCarrera')  Carreras
+          .col-lg-4
+            img.img-rounded(src='img/periodo.jpg')
+            a(href='crearPeriodo') Periodos
+          .col-lg-4
+            img.img-rounded(src='img/asignaturaa.jpg')
+            a(href='crearAsignatura') Asignaturas
+
+    include ./Components/footer.jade
+
+    script(src='./js/jquery-3.3.1.min.js')
+    script(src='./js/popper.min.js')
+    script(src='./js/bootstrap.min.js')
+    script(src='./js/ControladorDir_Academica.js')            

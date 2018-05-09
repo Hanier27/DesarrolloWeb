@@ -1,0 +1,184 @@
+#registrarEmpleado.modal.fade
+    .modal-dialog.modal-lg
+        .modal-content
+            // Modal Header
+            .modal-header
+                h4.modal-title Registrar Empleado
+                button.close(type='button', data-dismiss='modal') ×
+            // Modal body
+            .modal-body
+                form
+                    ul.nav.nav-tabs(role='tablist', style='margin-bottom: 20px;')
+                        li.nav-item
+                            a#tab-doc1.nav-link.active(data-toggle='tab', href='#datospersonales', role='tab') Datos personales
+                        li.nav-item
+                            a#tab-doc2.nav-link.disabled(data-toggle='tab', href='#datos_empleado', role='tab') Datos de Empleado
+                        li.nav-item
+                            a#tab-doc3.nav-link.disabled.d-none(data-toggle='tab', href='#docente', role='tab') Datos del Docente
+                    .row.justify-content-md-center
+                        .tab-content.col-lg-8
+                            #datospersonales.tab-pane.active(role='tabpanel')
+                                .form-group
+                                    label(for='txt-nombre_estudiante') Nombre
+                                    input#txt-nombre_estudiante.form-control(type='text', placeholder='Escriba el nombre')
+                                    .valid-feedback Esta bien
+                                    .invalid-feedback Revise el nombre del empleado
+                                .form-group
+                                    label(for='txt-apellido_estudiante') Apellido
+                                    input#txt-apellido_estudiante.form-control(type='text', placeholder='Escriba los apellidos')
+                                    .valid-feedback Esta bien
+                                    .invalid-feedback Revise los apellidos del estudiante
+                                .form-group
+                                    label(for='txt-identificacion') Identidad
+                                    input#txt-identificacion.form-control(type='text', placeholder='Escriba el número de identidad')
+                                    .valid-feedback Esta bien
+                                    .invalid-feedback Revise el número de identidad del estudiante
+                                .form-group
+                                    label(for='txt-fecha_nacimiento') Fecha de Nacimiento
+                                    input#txt-fecha_nacimiento.form-control(type='date')
+                                    .valid-feedback Esta bien
+                                    .invalid-feedback Revise la fecha de nacimiento del estudiante
+                                .form-group
+                                    label(for='txt-lugar_nacimiento') Lugar de Nacimiento
+                                    select#txt-lugar_nacimiento.custom-select
+                                        option(value='0') Selecciones un lugar
+                                    .valid-feedback Correcto
+                                    .invalid-feedback Seleccione el Lugr de Nacimiento
+                                .form-group
+                                    label(for='txt-municipio_nacimiento') Municipio de Nacimiento
+                                    select#txt-municipio_nacimiento.custom-select
+                                        option(value='0') Selecciones un lugar
+                                    .valid-feedback Correcto
+                                    .invalid-feedback Seleccione el Municipio de Nacimiento
+                                .form-group
+                                    label(for='txt-lugar_residencia') Lugar de Residencia
+                                    select#txt-lugar_residencia.custom-select
+                                        option(value='0') Selecciones un lugar
+                                    .valid-feedback Correcto
+                                    .invalid-feedback Seleccione el Lugar de Residencia
+                                .form-group
+                                    label(for='txt-municipio_residencia') Municipio de Residencia
+                                    select#txt-municipio_residencia.custom-select
+                                        option(value='0') Selecciones un lugar
+                                    .valid-feedback Correcto
+                                    .invalid-feedback Seleccione el Municipio de Residencia
+                                fieldset.form-group
+                                    .row
+                                        legend.col-form-label.col-sm-2.pt-0 Genero
+                                        .col-sm-10
+                                            .form-check
+                                                input#gridRadios1.form-check-input(type='radio', name='Radios_Genero', value='1', checked='')
+                                                label.form-check-label(for='gridRadios1')
+                                                | Masculino
+                                            .form-check
+                                                input#gridRadios2.form-check-input(type='radio', name='Radios_Genero', value='2')
+                                                label.form-check-label(for='gridRadios2')
+                                                | Femenino
+                                fieldset.form-group
+                                    .row
+                                        legend.col-form-label.col-sm-2.pt-0 Estado Civil
+                                        .col-sm-10
+                                            .form-check
+                                                input#gridRadios4.form-check-input(type='radio', name='Radios_EstadoCivil', value='1', checked='')
+                                                label.form-check-label(for='gridRadios4')
+                                                | Casado(a)
+                                            .form-check
+                                                input#gridRadios5.form-check-input(type='radio', name='Radios_EstadoCivil', value='2')
+                                                label.form-check-label(for='gridRadios5')
+                                                | Soltero(a)
+                                            .form-check
+                                                input#gridRadios6.form-check-input(type='radio', name='Radios_EstadoCivil', value='3')
+                                                label.form-check-label(for='gridRadios6')
+                                                | Union Libre
+                                .form-group
+                                    label(for='txt-direccion') Direccion
+                                    input#txt-direccion.form-control(type='text', placeholder='Escriba la direccion')
+                                    .valid-feedback Esta bien
+                                    .invalid-feedback Revise la direccion del estudiante
+                                .form-group
+                                    label(for='txt-telefono') Telefono
+                                    input#txt-telefono.form-control(type='tel', placeholder='Escriba el numero de telefono')
+                                    .valid-feedback Esta bien
+                                    .invalid-feedback Revise el telefono del estudiante
+                                .form-group
+                                    label(for='txt-correo') Correo
+                                    input#txt-correo.form-control(type='email', placeholder='Escriba el Correo del estudiante')
+                                    .valid-feedback Esta bien
+                                    .invalid-feedback Revise el correo del empleado
+                                .form-group.row.text-center
+                                    .col-sm-12
+                                        button.btn.btn-danger(type='button', data-dismiss='modal') Cancelar
+                                        button#btn-continuarEmpleado.btn.btn-primary(type='button', onclick='ValidarDatosPersonalesDocente()') Continuar
+                            #datos_empleado.tab-pane(role='tabpanel')
+                                .form-group
+                                    label(for='txt-numeroEmpleado') Numero de Empleado
+                                    input#txt-numeroEmpleado.form-control(type='text', placeholder='Escriba el numero de Empleado')
+                                    .valid-feedback Correcto
+                                    .invalid-feedback Escriba el numero de Empleado
+                                .form-group
+                                    label(for='clave_empleado') Clave
+                                    input#clave_empleado.form-control(type='password', placeholder='Contraseña')
+                                    .valid-feedback Correcta
+                                    .invalid-feedback Revise su Clave
+                                .form-group
+                                    label(for='re_clave_empleado') Repita la Clave
+                                    input#re_clave_empleado.form-control(type='password', placeholder='Repita la Contraseña', onkeyup='validarContraseñas()')
+                                    .valid-feedback Correctas
+                                    .invalid-feedback Las claves no son iguales
+                                .form-group
+                                    label(for='txt-campus') Campus
+                                    select#txt-campus.custom-select
+                                        option(value='0') Selecciones un Campus
+                                    .valid-feedback Esta bien
+                                    .invalid-feedback Seleccione un Campus
+                                .form-group
+                                    label(for='select-cargo') Cargo
+                                    select#select-cargo.custom-select(onchange='CambiarPaneles()')
+                                        option(value='0', selected='') Seleccione un Cargo
+                                    .valid-feedback Correcto
+                                    .invalid-feedback Seleccione un Cargo
+                                .form-group
+                                    label(for='select-tipoEmpleado') Tipo de Empleado
+                                    select#select-tipoEmpleado.custom-select
+                                        option(value='0', selected='') Seleccione el tipo de empleado
+                                    .valid-feedback Correcto
+                                    .invalid-feedback Seleccione un Tipo de Empleado
+                                #salario.form-group
+                                    label(for='txt-salario') Salario
+                                    input#txt-salario.form-control(type='text', placeholder='Escriba el salario base')
+                                    .valid-feedback Correcto
+                                    .invalid-feedback Escriba el salario base
+                                .form-group.row.text-center
+                                    .col-sm-12
+                                        button.btn.btn-danger(type='button', data-dismiss='modal') Cancelar
+                                        button#btn-continuarDocente.btn.btn-primary.d-none(type='button', onclick='ValidarDatosEmpleadoContinuar()') Continuar
+                                        button#btn-guardarEmpleado.btn.btn-success(type='button', onclick='AgregarEmpleado()') Registrar Empleado
+                            #docente.tab-pane(role='tabpanel')
+                                h4 Titularidad
+                                hr
+                                .form-group
+                                    label(for='select-Titularidad') Nombre de Titularidad
+                                    select#select-Titularidad.custom-select
+                                        option(value='0', selected='') Seleccione la Titularidad
+                                    .valid-feedback Correcto
+                                    .invalid-feedback Escriba el nombre de la Titularidad
+                                h4 Especialidades
+                                hr
+                                .form-group
+                                    label(for='select-Especialidad') Nombre de Especialidad
+                                    select#select-Especialidad.custom-select
+                                        option(value='0', selected='') Seleccione la Especialidad
+                                    .valid-feedback Correcto
+                                    .invalid-feedback Escriba el nombre de la Especialidad
+                                h4 Area
+                                hr
+                                .form-group
+                                    label(for='select-nombreArea') Nombre de la Area
+                                    select#select-nombreArea.custom-select
+                                        option(value='0', selected='') Seleccione una Carrera
+                                    .valid-feedback Correcto
+                                    .invalid-feedback Seleccione el area
+                                .form-group.row.text-center
+                                    .col-sm-12
+                                        button.btn.btn-danger(type='button', data-dismiss='modal') Cancelar
+                                        button#btn-guardarDocente.btn.btn-success(type='button', onclick='AgregarDocente()') Guardar

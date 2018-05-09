@@ -1,0 +1,58 @@
+doctype html
+html
+  head
+    title Inicio sesión de Estudiante
+    meta(charset='utf-8')
+    link(rel='icon', href='./img/favicon.jpg', type='image/jpg')
+    link(rel='stylesheet', href='./css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='./css/misestilos.css')
+    link(href='https://fonts.googleapis.com/css?family=Marcellus+SC', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Chicle', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Amatic+SC', rel='stylesheet')
+  body
+
+    include ./Components/navbar.jade
+
+    nav(aria-label='breadcrumb')
+      ol.breadcrumb
+        li.breadcrumb-item
+          a(href='/') Inicio
+        li.breadcrumb-item.active(aria-current='page') Inicio de Seccion
+    .container
+      .col-md-12
+        .row.justify-content-center
+          .login.col-md-6
+            form
+              .form-group.row
+                label.col-sm-3.col-form-label(for='user_estudiante') Cuenta
+                .col-sm-9
+                  input#user_estudiante.form-control(type='text', placeholder='Numero de Cuenta')
+                  .valid-feedback Esta bien
+                  .invalid-feedback Revise su Numero de Cuenta
+              .form-group.row
+                label.col-sm-3.col-form-label(for='pass_estudiante') Contraseña
+                .col-sm-9
+                  input#pass_estudiante.form-control(type='password', placeholder='Contraseña')
+                  .valid-feedback Esta bien
+                  .invalid-feedback Revise su Contraseña
+              .form-group.row.text-center
+                .col-sm-12
+                  button#btn-loginEstudiante.btn.btn-primary(type='button')  Iniciar sesión
+        .row.justify-content-center
+          .alert.alert-danger.alert-dismissible.fade.show.text-center(role='alert')
+            h4.alert-heading Importante!
+            p
+              | Si tiene problemas para ingresar al sistema, favor comunicarse al Tel: 2232-6862.
+            hr
+            p
+              | Para una mejor experiencia de navegación utilice los navegadores Internet Explorer o Google-Chrome
+            button.close(type='button', data-dismiss='alert', aria-label='Close')
+              span(aria-hidden='true') ×
+    
+    include ./Components/footer.jade
+    
+    script(src='./js/jquery-3.3.1.min.js')
+    script(src='./js/popper.min.js')
+    script(src='./js/bootstrap.min.js')
+    script(src='./js/validacion_Login.js')

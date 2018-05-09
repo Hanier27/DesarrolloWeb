@@ -1,0 +1,57 @@
+.row(style='padding-top: 40px; margin-right: 20px;margin-left: 20px; background-color: white; margin-top: 20px; padding-bottom: 70px;')
+	.col-md-12
+		.col-md-12
+			h1.display-6.text-center(style='color: black;')
+				b Solicitudes
+			hr(style='border:1px solid #dae0e5;')
+		.col-md-12
+			.row
+				#v-pills-tab.nav.flex-column.nav-pills.col-md-2(role='tablist', aria-orientation='vertical')
+					a#v-pills-Iniciosolicitud-tab.nav-link.active(data-toggle='pill', href='#v-pills-Iniciosolicitud', role='tab', aria-controls='v-pills-Iniciosolicitud', aria-selected='true') Inicio
+					a#v-pills-cambioCarrera-tab.nav-link(data-toggle='pill', href='#v-pills-cambioCarrera', role='tab', aria-controls='v-pills-cambioCarrera', aria-selected='true') Cambio de Carrera
+					a#v-pills-cambioUniversidad-tab.nav-link(data-toggle='pill', href='#v-pills-cambioUniversidad', role='tab', aria-controls='v-pills-cambioUniversidad', aria-selected='false') Cambio de Universidad
+				#v-pills-tabContent.tab-content.col-md-10(style='padding-top: 20px;')
+					#v-pills-Iniciosolicitud.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='v-pills-Iniciosolicitud-tab')
+						.row
+							.col-4
+								img(src='https://civuunah.files.wordpress.com/2015/11/puma.png?w=640', width='200px', style='transform: scaleX(-1);')
+							.col-8.d-flex.justify-content-center(style='padding: 100px 20px;')
+								h1(style="color:black; font-family: 'Amatic SC', cursive; font-size: 50px;") UNAH es tu Casa
+					#v-pills-cambioCarrera.tab-pane.fade(role='tabpanel', aria-labelledby='v-pills-cambioCarrera-tab')
+						.row.d-flex.justify-content-center
+							.col-12.col-md-8.col-lg-6(style='padding-top: 20px;')
+								form
+									.form-group
+										textarea#txt-motivoCambioCarrera.form-control(type='text', placeholder='Describa el motivo por el que desea realizar el cambio de carrera')
+										.valid-feedback Correcto
+										.invalid-feedback Describa el motivo de cambio de Carrera
+									.form-group
+										select#select-cambioCarreras.form-control
+											option(value='0') Seleccione la Carrera
+											option(value='1') Ingenieria Civil
+											option(value='2') Ingenieria Mecanica
+											option(value='3') Licenciatura en Matematicas
+											option(value='4') Lic. Pedagogia
+										.valid-feedback Correcto
+										.invalid-feedback Seleccion una Universidad
+								.form-group.d-flex.justify-content-center
+									.col-md-4
+										button#btn-cambioCarrera.btn.btn-success(onclick='guardarCambioCarrera()') Enviar Solicitud
+					#v-pills-cambioUniversidad.tab-pane.fade(role='tabpanel', aria-labelledby='v-pills-cambioUniversidad-tab')
+						.row.d-flex.justify-content-center
+							.col-12.col-md-8.col-lg-6(style='padding-top: 20px;')
+								form
+									.form-group
+										textarea#txt-motivoCambioUniversidad.form-control(type='text', placeholder='Describa el motivo por el que desea realizar el cambio de universidad')
+										.valid-feedback Correcto
+										.invalid-feedback Describa el motivo de cambio de carrera
+									.form-group
+										select#select-cambioUniversidad.form-control
+											option(value='0') Seleccione la Universidad
+											option(value='1') UNAH-CURLA
+											option(value='2') UNAH-VS
+										.valid-feedback Correcto
+										.invalid-feedback Seleccion una Universidad
+								.form-group.d-flex.justify-content-center
+									.col-md-4
+										button.btn.btn-success(onclick='guardarCambioUnah()') Enviar Solicitud

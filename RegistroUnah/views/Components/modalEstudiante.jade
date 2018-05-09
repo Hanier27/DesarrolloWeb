@@ -1,0 +1,141 @@
+#registrarEstudiante.modal.fade
+	.modal-dialog
+		.modal-content
+			// Modal Header
+			.modal-header
+				h4.modal-title Registrar Estudiante
+				button.close(type='button', data-dismiss='modal') ×
+			// Modal body
+			.modal-body
+				form
+					ul.nav.nav-tabs(role='tablist', style='margin-bottom: 20px;')
+						li.nav-item
+							a#tab-1.nav-link.active(data-toggle='tab', href='#datospersonales', role='tab') Datos personales
+						li.nav-item
+							a#tab-2.nav-link.disabled(data-toggle='tab', href='#datos_estudiantes', role='tab') Datos de Estudiante
+					.tab-content
+						#datospersonales.tab-pane.active(role='tabpanel')
+							.form-group
+								label(for='txt-nombre_estudiante') Nombre
+								input#txt-nombre_estudiante.form-control(type='text', placeholder='Escriba el nombre')
+								.valid-feedback Correcto
+								.invalid-feedback Revise el nombre del estudiante
+							.form-group
+								label(for='txt-apellido_estudiante') Apellido
+								input#txt-apellido_estudiante.form-control(type='text', placeholder='Escriba los apellidos')
+								.valid-feedback Correcto
+								.invalid-feedback Revise los apellidos del estudiante
+							.form-group
+								label(for='txt-identificacion') Identidad
+								input#txt-identificacion.form-control(type='text', placeholder='Escriba el número de identidad')
+								.valid-feedback Correcto
+								.invalid-feedback Revise el número de identidad del estudiante
+							.form-group
+								label(for='txt-fecha_nacimiento') Fecha de Nacimiento
+								input#txt-fecha_nacimiento.form-control(type='date')
+								.valid-feedback Correcto
+								.invalid-feedback Revise la fecha de nacimiento del estudiante
+							.form-group
+								label(for='txt-lugar_nacimiento') Lugar de Nacimiento
+								select#txt-lugar_nacimiento.custom-select
+									option(value='0') Selecciones un lugar
+								.valid-feedback Correcto
+								.invalid-feedback Seleccione el Lugar de Nacimiento
+							.form-group
+								label(for='txt-municipio_nacimiento') Municipio de Nacimiento
+								select#txt-municipio_nacimiento.custom-select
+									option(value='0') Selecciones un lugar
+								.valid-feedback Correcto
+								.invalid-feedback Seleccione el Municipio de Nacimiento
+							.form-group
+								label(for='txt-lugar_residencia') Lugar de Residencia
+								select#txt-lugar_residencia.custom-select
+									option(value='0') Selecciones un lugar
+								.valid-feedback Correcto
+								.invalid-feedback Seleccione el Lugar de Residencia
+							.form-group
+								label(for='txt-municipio_residencia') Municipio de Residencia
+								select#txt-municipio_residencia.custom-select
+									option(value='0') Selecciones un lugar
+								.valid-feedback Correcto
+								.invalid-feedback Seleccione el Municipio de Residencia
+							fieldset.form-group
+								.row
+									legend.col-form-label.col-sm-2.pt-0 Genero
+									.col-sm-10
+										.form-check
+											input#gridRadios1.form-check-input(type='radio', name='Radios_Genero', value='1', checked='')
+											label.form-check-label(for='gridRadios1')
+												| Masculino
+										.form-check
+											input#gridRadios2.form-check-input(type='radio', name='Radios_Genero', value='2')
+											label.form-check-label(for='gridRadios2')
+												| Femenino
+							fieldset.form-group
+								.row
+									legend.col-form-label.col-sm-2.pt-0 Estado Civil
+									.col-sm-10
+										.form-check
+											input#gridRadios3.form-check-input(type='radio', name='Radios_EstadoCivil', value='1', checked='')
+											label.form-check-label(for='gridRadios1')
+												| Casado(a)
+										.form-check
+											input#gridRadios4.form-check-input(type='radio', name='Radios_EstadoCivil', value='2')
+											label.form-check-label(for='gridRadios2')
+												| Soltero(a)
+										.form-check
+											input#gridRadios5.form-check-input(type='radio', name='Radios_EstadoCivil', value='3')
+											label.form-check-label(for='gridRadios2')
+												| Union Libre
+							.form-group
+								label(for='txt-direccion') Direccion
+								input#txt-direccion.form-control(type='text', placeholder='Escriba la direccion')
+								.valid-feedback Correcto
+								.invalid-feedback Revise la direccion del estudiante
+							.form-group
+								label(for='txt-telefono') Telefono
+								input#txt-telefono.form-control(type='tel', placeholder='Escriba el numero de telefono')
+								.valid-feedback Correcto
+								.invalid-feedback Revise el telefono del estudiante
+							.form-group
+								label(for='txt-correo') Correo
+								input#txt-correo.form-control(type='email', placeholder='Escriba el Correo del estudiante')
+								.valid-feedback Correcto
+								.invalid-feedback Revise el correo del estudiante
+							.form-group.row.text-center
+								.col-sm-12
+									button.btn.btn-danger(type='button', data-dismiss='modal') Cancelar
+									button#btn-continuarEstudiante.btn.btn-primary(type='button', onclick='ValidarDatosPersonales()') Continuar
+						#datos_estudiantes.tab-pane(role='tabpanel')
+							.form-group
+								label(for='txt-numeroCuenta') Numero de Cuenta
+								input#txt-numeroCuenta.form-control(type='text', placeholder='Escriba el numero de Cuenta')
+								.valid-feedback Esta bien
+								.invalid-feedback Revise su Numero de Cuenta
+							.form-group
+								label(for='pass_estudiante') Contraseña
+								input#pass_estudiante.form-control(type='password', placeholder='Contraseña')
+								.valid-feedback Esta bien
+								.invalid-feedback Revise su Contraseña
+							.form-group
+								label(for='re_pass_estudiante') Repita Contraseña
+								input#re_pass_estudiante.form-control(type='password', placeholder='Repita la Contraseña')
+								.valid-feedback Esta bien
+								.invalid-feedback Las contraseñas no son iguales
+							.form-group
+								label(for='txt-campus') Campus
+								select#txt-campus.custom-select
+									option(value='0') Selecciones un Campus
+								.valid-feedback Esta bien
+								.invalid-feedback Seleccione un Campus
+							.form-group
+								label(for='select-carreras') Carreras
+								select#select-carreras.custom-select(multiple='', size='2')
+									option(value='0') Seleccione una Carrera
+									option(value='1') Ingenieria en Sistemas
+								.valid-feedback Esta bien
+								.invalid-feedback Seleccione la Carrera
+							.form-group.row.text-center
+								.col-sm-12
+									button.btn.btn-danger(type='button', data-dismiss='modal') Cancelar
+									button#btn-guardarEstudiante.btn.btn-success(type='button', onclick='AgregarEstudiante()') Registrar Estudiante

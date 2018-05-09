@@ -1,0 +1,42 @@
+doctype html
+html
+  head
+    title Administracion SEAPI
+    meta(charset='utf-8')
+    link(rel='icon', href='./img/favicon.jpg', type='image/jpg')
+    link(rel='stylesheet', href='./css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='./css/misestilos.css')
+    link(href='https://fonts.googleapis.com/css?family=Marcellus+SC', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Chicle', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Amatic+SC', rel='stylesheet')
+  body
+
+    include ./Components/navbar.jade
+
+    nav(aria-label='breadcrumb')
+      ol.breadcrumb
+        li.breadcrumb-item
+          a(href='/') Inicio
+        li.breadcrumb-item.active(aria-current='page') Seapi
+
+    .container
+      .col-md-12
+        #MenuPrincipal.row.justify-content-center
+          .col-lg-3
+            img.img-rounded(src='img/cam.jpg')
+            a(href='registrarCampus')  Campus
+          .col-lg-3
+            img.img-rounded(src='img/edificio.png')
+            a(href='registrarEdificio')  Edificios
+          .col-lg-3
+            img.img-rounded(src='img/aula.png')
+            a(href='registrarAula')  Aulas
+
+
+    include ./Components/footer.jade
+
+    script(src='./js/jquery-3.3.1.min.js')
+    script(src='./js/popper.min.js')
+    script(src='./js/bootstrap.min.js')
+    script(src='./js/ControladorSeapi.js')

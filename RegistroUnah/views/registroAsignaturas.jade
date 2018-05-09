@@ -1,0 +1,101 @@
+doctype html
+html
+  head
+    title Registro de Asignaturas
+    meta(charset='utf-8')
+    link(rel='icon', href='./img/favicon.jpg', type='image/jpg')
+    link(rel='stylesheet', href='./css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='./css/misestilos.css')
+    link(href='https://fonts.googleapis.com/css?family=Marcellus+SC', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Chicle', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Amatic+SC', rel='stylesheet')
+  body
+
+    include ./Components/navbar.jade
+
+    nav(aria-label='breadcrumb')
+        ol.breadcrumb
+            li.breadcrumb-item
+                a(href='/') Inicio
+            li.breadcrumb-item
+                a(href='direccionAcademica') Direccion Academica
+            li.breadcrumb-item.active(aria-current='page') Asignaturas
+    .container-fluid
+        .col-md-12
+            h1.display-6.text-center
+                b Asignaturas
+            hr(style='border:1px solid #dae0e5;')
+            .row.justify-content-md-center.main_regEmpleado
+                .col-md-12(style=' padding: 20px;')
+                    .form-group.row.text-center
+                        .col-sm-12
+                            button.btn.btn-success.btn-lg(type='button', onclick='removerValidacionesAsignatura() ', data-toggle='modal', data-target='#registrarAsignatura')
+                                i.fa.fa-user-plus
+                                |  Registrar
+                    #reg_Estudiante.col-md-12
+                        table#tbl-asignatura.table.table-striped.table-bordered(style='width:100%')
+                            thead
+                                tr
+                                    th #
+                                    th Codigo Alterno
+                                    th Asignatura
+                                    th UV
+                                    th Carrera
+                                    th Dias
+                                    th Tipo
+                            tbody
+    #registrarAsignatura.modal.fade
+        .modal-dialog
+            .modal-content
+                // Modal Header
+                .modal-header
+                    h4.modal-title Agregar Asignatura
+                    button.close(type='button', data-dismiss='modal') ×
+                // Modal body
+                .modal-body
+                    form
+                        .form-group
+                            label(for='txt-codigoAsignatura') Codigo Alterno
+                            input#txt-codigoAsignatura.form-control(type='text', placeholder='Escriba el codigo')
+                            .valid-feedback Correcto
+                            .invalid-feedback Escriba el codigo de la Asignatura
+                        .form-group
+                            label(for='txt-nombreAsignatura') Nombre de la Asigntura
+                            input#txt-nombreAsignatura.form-control(type='text', placeholder='Escriba el nombre de la asignatura')
+                            .valid-feedback Correcto
+                            .invalid-feedback Escriba el nombre de la Asignatura
+                        .form-group
+                            label(for='txt-uvAsignatura') Unidades Valorativas
+                            input#txt-uvAsignatura.form-control(type='number', placeholder='Escriba las unidades valorativas')
+                            .valid-feedback Correcto
+                            .invalid-feedback Seleccione la Cantidad de unidades valorativas de la Asignatura
+                        .form-group
+                            label(for='select-carrera') Carrera
+                            select#select-carrera.custom-select
+                                option(value='0', selected='') Seleccione una Carrera
+                            .valid-feedback Correcto
+                            .invalid-feedback Seleccione la Carrera
+                        .form-group
+                            label(for='select-diasSemana') Dias
+                            input#select-diasSemana.form-control(type='number', placeholder='Escriba la Cantidad de Dias')
+                            .valid-feedback Correcto
+                            .invalid-feedback Seleccione la Cantidad de Dias la Asignatura
+                        .form-group
+                            label(for='select-tipoAsignatura') Tipo de Asignatura
+                            select#select-tipoAsignatura.custom-select
+                                option(value='0', selected='') Seleccione el tipo de Asignatura
+                            .valid-feedback Correcto
+                            .invalid-feedback Seleccione el Tipo de Asignatura
+                // Modal footer
+                .modal-footer
+                    div(style='text-align: center;')
+                    button.btn.btn-danger(type='button', data-dismiss='modal') Close
+                    button#btn_registrarAsignatura.btn.btn-primary(onclick='guardarAsignatura()', type='button') Registrar Asignatura
+
+    include ./Components/footer.jade
+
+    script(src='./js/jquery-3.3.1.min.js')
+    script(src='./js/popper.min.js')
+    script(src='./js/bootstrap.min.js')
+    script(src='./js/ControladorDir_Academica.js') 

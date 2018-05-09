@@ -1,0 +1,81 @@
+doctype html
+html
+  head
+    title Pagina Principal
+    meta(charset='utf-8')
+    link(rel='icon', href='./img/favicon.jpg', type='image/jpg')
+    link(rel='stylesheet', type="text/css", href='css/bootstrap.min.css')
+    link(rel='stylesheet', type="text/css" href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet',type="text/css", href='css/misestilos.css')
+    link(href='https://fonts.googleapis.com/css?family=Marcellus+SC', rel='stylesheet',type="text/css")
+    link(href='https://fonts.googleapis.com/css?family=Chicle', rel='stylesheet', type="text/css")
+    link(href='https://fonts.googleapis.com/css?family=Amatic+SC', rel='stylesheet', type="text/css")
+  body
+
+    include ./Components/navbar.jade
+  
+    .jumbotron.jumbotron-fluid.d-none.d-md-block
+      .container
+        h1.display-4 Bienvenido
+    .container
+      .row.justify-content-md-center
+        .col-md-6
+          #carouselExampleIndicators.carousel.slide(data-ride='carousel')
+            ol.carousel-indicators
+              li.active(data-target='#carouselExampleIndicators', data-slide-to='0')
+              li(data-target='#carouselExampleIndicators', data-slide-to='1')
+              li(data-target='#carouselExampleIndicators', data-slide-to='2')
+            .carousel-inner
+              .carousel-item.active
+                img.d-block.w-100(src='http://cdn.latribuna.hn/wp-content/uploads/2018/01/calendario-academico.jpg', alt='First slide', height='400px')
+              .carousel-item
+                img.d-block.w-100(src='http://www.elheraldo.hn/csp/mediapool/sites/dt.common.streams.StreamServer.cls?STREAMOID=OJd61lIS8uwou3QFTg7ikc$daE2N3K4ZzOUsqbU5sYs2VvPGFywD$GlAgZ1BOxEL6FB40xiOfUoExWL3M40tfzssyZqpeG_J0TFo7ZhRaDiHC9oxmioMlYVJD0A$3RbIiibgT65kY_CSDiCiUzvHvODrHApbd6ry6YGl5GGOZrs-&CONTENTTYPE=image/jpeg', alt='Second slide', height='400px')
+              .carousel-item
+                img.d-block.w-100(src='https://presencia.unah.edu.hn/assets/Uploads/_resampled/ResizedImage600791-expediente-estudiantil.jpg', alt='Third slide', height='400px')
+            a.carousel-control-prev(href='#carouselExampleIndicators', role='button', data-slide='prev')
+              span.carousel-control-prev-icon(aria-hidden='true')
+              span.sr-only Previous
+            a.carousel-control-next(href='#carouselExampleIndicators', role='button', data-slide='next')
+              span.carousel-control-next-icon(aria-hidden='true')
+              span.sr-only Next
+    #avisos-main.container
+      .col-md-12
+        hr(style='border:1px solid #dae0e5;')
+        h1.display-6.text-center
+          b Avisos
+        hr(style='border:1px solid #dae0e5;')
+        #avisos.row
+          .col-12.col-sm-12.col-md-6.col-lg-4
+            figure.figure
+              img.figure-img.img-fluid.rounded(src='https://cdn5.hch.tv/wp-content/uploads/2018/01/MAXBACKUPHCH-83.jpg', alt='A generic square placeholder image with rounded corners in a figure.')
+              figcaption.figure-caption
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                | tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                | quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                | consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                | cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                | proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          .col-12.col-sm-12.col-md-6.col-lg-4
+            figure.figure
+              img.figure-img.img-fluid.rounded(src='https://presencia.unah.edu.hn/assets/Uploads/_resampled/SetWidth750-unah-vs-60-aniversario.jpg', alt='A generic square placeholder image with rounded corners in a figure.')
+              figcaption.figure-caption
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                | tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                | quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                | consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                | cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                | proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          .col-12.col-sm-12.col-md-6.col-lg-4
+            figure.figure
+              img.figure-img.img-fluid.rounded(src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4OyChkJCYznf5IzP7J8yVVudrOIATlaKPycv7aP2pKbRcadQx', alt='A generic square placeholder image with rounded corners in a figure.')
+              figcaption.figure-caption
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                | tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                | quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                | consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                | cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                | proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    include ./Components/footer.jade
+    script(src='js/jquery-3.3.1.min.js')
+    script(src='js/popper.min.js')
+    script(src='js/bootstrap.min.js')
