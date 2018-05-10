@@ -8,6 +8,7 @@ var router_ga=require('./Server/router_gestionAcademica.js');
 var router_seapi=require('./Server/router_seapi.js');
 var router_jefesDepartemento=require('./Server/router_jefeDepartamento');
 var router_matricula=require('./Server/router_matricula');
+var router_docente=require('./Server/router_docentes');
 const session = require('express-session');
 
 app.use(bodyParser.json()); // support json encoded bodies
@@ -325,8 +326,10 @@ app.use('/matricula',router_matricula);
 
 /*-----------------Docentes-------------------*/
 app.get('/docente', function(req,res){
-    res.sendFile(__dirname+'/public/docentes.html');
+    res.render("gestionDocentes");
 });
+
+app.use('/Docentes',router_docente);
 
 /*-----------------Consultas-------------------*/
 

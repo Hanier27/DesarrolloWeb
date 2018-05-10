@@ -12,7 +12,6 @@
 						a#v-pills-addAsignatura-tab.nav-link(data-toggle='pill', href='#v-pills-addAsignatura', role='tab', aria-controls='v-pills-addAsignatura', aria-selected='true') Adicionar Asignatura
 						a#v-pills-forma003-tab.nav-link(data-toggle='pill', href='#v-pills-forma003', role='tab', aria-controls='v-pills-forma003', aria-selected='false') Forma 003
 						a#v-pills-listaEspera-tab.nav-link(data-toggle='pill', href='#v-pills-listaEspera', role='tab', aria-controls='v-pills-listaEspera', aria-selected='false') Lista de Espera
-						a#v-pills-Cuenta-tab.nav-link(data-toggle='pill', href='#v-pills-Cuenta', role='tab', aria-controls='v-pills-Cuenta', aria-selected='false') Estado de cuenta
 					#v-pills-tabContent.tab-content.col-md-10(style='padding-top: 30px;')
 						#v-pills-matricula.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='v-pills-matricula-tab')
 							.row
@@ -65,14 +64,14 @@
 									.col-8.col-md-8.col-lg-10
 										.row
 											.col-md-12.col-lg-6
-												h5 Cuenta: 20131004389
-												h5 Nombre: Hanier Isaias Rodas
-												h5 Carrera: Ingenieria en Sistemas
+												h5#cuenta 
+												h5#nombre 
+												h5#carrera 
 											.col-md-12.col-lg-6
-												h5 Centro: Cuidad Universitaria
-												h5 Año: 2018
+												h5#centro 
+												h5#ano  
 							.table-responsive
-								table#example.table.table-striped.table-bordered(style='width:100%')
+								table#forma003.table.table-striped.table-bordered(style='width:100%')
 									thead(style='color: white;')
 										tr.bg-primary(align='center')
 											th(colspan='11') Asignaturas Matriculadas
@@ -87,51 +86,10 @@
 											th Aula
 											th UV
 											th Periodo
-											th OBS
 									tbody(align='center')
-										tr
-											td EG011
-											td ESPANOL GENERAL
-											td 1400
-											td 1400
-											td 1500
-											td LuMaMiJu
-											td D1
-											td 101
-											td 4
-											td 1
-											td
-							.table-responsive
-								table#example.table.table-striped.table-bordered(style='width:100%')
-									thead(style='color: white;')
-										tr.bg-primary(align='center')
-											th(colspan='11') Laboratorios Matriculados
-										tr.bg-primary(align='center')
-											th Codigo
-											th Laboratorio
-											th Seccion
-											th HI
-											th HF
-											th Dias
-											th Edificio
-											th Aula
-											th Periodo
-											th OBS
-									tbody(align='center')
-										tr
-											td EG011
-											td ESPANOL GENERAL
-											td 1400
-											td 1400
-											td 1500
-											td LuMaMiJu
-											td D1
-											td 101
-											td 1
-											td
 						#v-pills-listaEspera.tab-pane.fade(role='tabpanel', aria-labelledby='v-pills-listaEspera-tab')
 							.table-responsive
-								table#example.table.table-striped.table-bordered(style='width:100%')
+								table#En_espera.table.table-striped.table-bordered(style='width:100%')
 									thead(style='color: white;')
 										tr.bg-primary(align='center')
 											th(colspan='11') Asignaturas en Espera
@@ -143,28 +101,6 @@
 											th Periodo
 											th Cancelar
 									tbody(align='center')
-										tr
-											td EG011
-											td ESPANOL GENERAL
-											td LuMaMiJu
-											td 4
-											td 1
-											td
-												button.btn.btn-danger Eliminar
-						#v-pills-Cuenta.tab-pane.fade(role='tabpanel', aria-labelledby='v-pills-Cuenta-tab')
-							.d-flex.justify-content-center
-								.table-responsive.col-md-6
-									table#example.table.table-striped.table-bordered(style='width:100%')
-										thead(style='color: white;')
-											tr.bg-warning(align='center')
-												th(colspan='11') Cargos Pendientes
-											tr.bg-warning(align='center')
-												th Cargo
-												th Monto
-										tbody(align='center')
-											tr
-												td Matricula
-												td L.270
 						#matricular.modal.fade
 							.modal-dialog
 								.modal-content
@@ -196,6 +132,7 @@
 									// Modal footer
 									.modal-footer
 										div(style='text-align: center;')
+										span#requisitos.text-danger.d-none
 										button#btn_registrarSeccion.btn.btn-primary(onclick='Matricular()', type='button') Matricular
 
 	

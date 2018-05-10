@@ -1,0 +1,90 @@
+doctype html
+html
+  head
+    title Docentes
+    meta(charset='utf-8')
+    link(rel='icon', href='./img/favicon.jpg', type='image/jpg')
+    link(rel='stylesheet', href='./css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='./css/misestilos.css')
+    link(rel='stylesheet', href='./css/modalmatricula.css')
+    link(href='https://fonts.googleapis.com/css?family=Marcellus+SC', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Chicle', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Amatic+SC', rel='stylesheet')
+  body
+
+    include ./Components/navbar.jade
+
+    nav(aria-label='breadcrumb')
+        ol.breadcrumb
+            li.breadcrumb-item
+                a(href='/') Inicio
+            li.breadcrumb-item 
+                a(href='/docente') Docentes
+    .container-fluid
+        .col-md-12
+            h1.display-6.text-center
+                b#title Docentes
+            hr(style='border:1px solid #dae0e5;')
+            .row.justify-content-md-center.main_regEmpleado  
+                .col-md-12(style=' padding: 20px;')
+                    .form-group.row.text-center
+                        .col-sm-12
+                            button#btn-agregarNotas.btn.btn-success.btn-lg(type='button', onclick='', data-toggle='modal', data-target='#modal_agregarNotas')
+                                i.fa.fa-user-plus
+                                |  Agregar Notas   
+                #reg_Estudiante.col-md-12
+                    table#tbl-SeccionesDocente.table.table-striped.table-bordered(style='width:100%')
+                        thead
+                            tr
+                                th #
+                                th Codigo Alterno
+                                th HI
+                                th HF
+                                th Asignatura
+                                th Docente
+                                th Aula
+                                th Dias
+                                th Periodo
+                                th Estudiantes
+                        tbody
+                    table#tbl-Alumnos.table.table-striped.table-bordered(style='width:100%')
+                        thead
+                            tr
+                                th #
+                                th Cuenta
+                                th Estudiante
+                                th Correo
+                                th.d-none Nota
+                        tbody    
+    #modal_agregarNotas.modal(tabindex='-1', role='dialog')
+        .modal-dialog(role='document')
+            .modal-content
+                .modal-header
+                    h5.modal-title Agregar Notas
+                    button.close(type='button', data-dismiss='modal', aria-label='Close')
+                    span(aria-hidden='true') ×
+                .modal-body.col-md-12
+                    form
+                        table#tablaNotas.table.table-bordered
+                            thead(align='center')
+                                tr(align='center')
+                                    th(colspan='4') Estudiantes
+                                tr
+                                    th(scope='col') # Cuenta
+                                    th(scope='col') Estudiante
+                                    th(scope='col') Correo
+                                    th(scope='col') Nota
+                            tbody(align='center')  
+                .modal-footer
+                    button.btn.btn-danger(type='button', data-dismiss='modal') Cancelar
+                    button#btn-guardarNotas.btn.btn-primary(type='button',onclick="GuardarNotas()") Guardar
+                        
+
+    include ./Components/footer.jade
+
+    script(src='./js/jquery-3.3.1.min.js')
+    script(src='./js/popper.min.js')
+    script(src='./js/bootstrap.min.js')
+    script(src='./js/Controlador_Docentes.js')
+     

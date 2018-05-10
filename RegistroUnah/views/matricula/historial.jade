@@ -9,7 +9,6 @@
 				#v-pills-tab.nav.flex-column.nav-pills.col-md-2(role='tablist', aria-orientation='vertical')
 					a#v-pills-Iniciohistorial-tab.nav-link.active(data-toggle='pill', href='#v-pills-Iniciohistorial', role='tab', aria-controls='v-pills-Iniciohistorial', aria-selected='true') Inicio
 					a#v-pills-historialacademico-tab.nav-link(data-toggle='pill', href='#v-pills-historialacademico', role='tab', aria-controls='v-pills-historialacademico', aria-selected='true') Historial Academico
-					a#v-pills-equivalencias-tab.nav-link(data-toggle='pill', href='#v-pills-equivalencias', role='tab', aria-controls='v-pills-equivalencias', aria-selected='false') Equivalencias
 				#v-pills-tabContent.tab-content.col-md-10(style='padding-top: 20px;')
 					#v-pills-Iniciohistorial.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='v-pills-Iniciohistorial-tab')
 						.row
@@ -19,23 +18,23 @@
 								h1(style="color:black; font-family: 'Amatic SC', cursive; font-size: 50px;") UNAH es tu Casa
 					#v-pills-historialacademico.tab-pane.fade(role='tabpanel', aria-labelledby='v-pills-historialacademico-tab')
 						.row.d-flex.justify-content-center
-							#profile-user.col-md-12(style='padding-bottom: 30px;')
+							#profile-user-historial.col-md-12(style='padding-bottom: 30px;')
 								.row
 									.col-4.col-md-4.col-lg-2
 										img.rounded-cicle(src='img/user.png', width='140px', alt='Responsive-img')
 									.col-8.col-md-8.col-lg-10
 										.row
 											.col-md-12.col-lg-6
-												h5 Cuenta: 20131004389
-												h5 Nombre: Hanier Isaias Rodas
-												h5 Carrera: Ingenieria en Sistemas
+												h5#cuenta 
+												h5#nombre 
+												h5#carrera 
 											.col-md-12.col-lg-6
-												h5 Centro: Cuidad Universitaria
+												h5#centro 
 												h5 Indice Global: 90
 												h5 Indice Periodo: 99
 							.col-md-12
 								.table-responsive
-									table#example.table.table-striped.table-bordered(style='width:100%')
+									table#tbl-historial.table.table-striped.table-bordered(style='width:100%')
 										thead
 											tr
 												th Codigo
@@ -47,14 +46,3 @@
 												th Calificacion
 												th Observacion
 										tbody
-											tr
-												td EG011
-												td ESPANOL GENERAL
-												td 4
-												td 1400
-												td 2013
-												td 1
-												td 89
-												td APR
-					#v-pills-equivalencias.tab-pane.fade(role='tabpanel', aria-labelledby='v-pills-equivalencias-tab')
-						.row.d-flex.justify-content-center
